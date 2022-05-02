@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --text-color: rgb(171, 171, 171);
+    --border-color: rgb(224, 224, 224);
+    --background-color: rgb(244, 244, 244);
+}
+
+.signupContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    font-family: lato;
+}
+
+.imageSection {
+    background-color: #eafaf8;
+    height: 100vh;
+    width: 45vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageSection img {
+    width: 550px;
+}
+
+.formSection {
+    width: 55vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    margin: 0.8em 0;
+    height: 90px;
+}
+
+.formField input {
+    width: 450px;
+    height: 45px;
+    padding: 0 1em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: var(--background-color);
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.formField input::placeholder {
+    color: rgb(176, 176, 176);
+    font-weight: 100;
+}
+
+.formField label {
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header p {
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.header a {
+    text-decoration: none;
+    background: none;
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5em 1.5em;
+    border-radius: 20px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 12px;
+    font-family: lato;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header button:hover {
+    background-color: var(--background-color);
+    transition: all 0.2s ease;
+}
+
+.heading {
+    margin-bottom: 40px;
+}
+
+.heading h3 {
+    font-size: 2em;
+}
+
+.heading p {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+form button {
+    background: #27dec0;
+    outline: none;
+    border: 1px solid var(--border-color);
+    padding: 1em 4.5em;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    font-family: lato;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+form button:hover {
+    background-color: #23d2b5;
+}
+
+span {
+    color: rgb(243, 111, 111);
+    font-size: 10px;
+}
+
+@media (max-width: 1000px) {
+    .signupContainer {
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: space-between;
+        font-family: poppins;
+    }
+    .imageSection {
+        background-color: #eafaf8;
+        width: 40vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .imageSection img {
+        width: 300px;
+    }
+    .formSection {
+        width: 60vw;
+    }
+    .formField input {
+        width: 350px;
+    }
+    .heading h3 {
+        font-size: 1.5em;
+    }
+    .heading p {
+        font-size: 12px;
+        color: var(--text-color);
+    }
+    form button {
+        padding: 0.8em 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .signupContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: poppins;
+    }
+    .imageSection {
+        display: none;
+    }
+    .formSection {
+        width: 100vw;
+    }
+    .formField input {
+        width: 400px;
+    }
+    .heading h3 {
+        font-size: 1.5em;
+    }
+    .heading p {
+        font-size: 12px;
+        color: var(--text-color);
+    }
+    form button {
+        padding: 0.8em 3em;
+    }
+}
+@media (max-width: 470px) {
+    .signupContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: poppins;
+    }
+    .formSection {
+        width: 100vw;
+    }
+    .formField input {
+        width: 300px;
+    }
+    .formField {
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0;
+        height: 90px;
+    }
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: -60px;
+    }
+}
+@media (max-width: 350px) {
+    
+    .formSection {
+        width: 100vw;
+    }
+    .formField input {
+        width: 250px;
+    }
+    .formField {
+        display: flex;
+        flex-direction: column;
+        margin: 0.7em 0;
+        height: 90px;
+    }
+    .heading {
+        margin-bottom: 20px;
+    }
+    .heading h3 {
+        font-size: 1.3em;
+    }
+    .heading p {
+        font-size: 13px;
+    }
+    .formField label {
+        margin-bottom: 0px;
+    }
+}
+
+
