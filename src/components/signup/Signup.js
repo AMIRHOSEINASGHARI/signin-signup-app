@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 //functions
 import { validation } from '../../functions/validation';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import notify from '../../functions/toast';
 
 //tools
 import image from '../../tools/images/Signup.png'
@@ -43,6 +46,21 @@ const Signup = () => {
         console.log(errors)
     }, [data])
 
+    const submitHandler = (e) => {
+        e.preventDefault()
+        setOnFocus({
+            name: true,
+            email: true,
+            password: true,
+            confirmPassword: true
+        })
+        if(Object.keys(errors).length === 0) {
+            notify('success' , 'Signd up successfully!')
+        }else {
+            notify('error' , 'Unvalid data!')
+        }
+    }
+
     return (
         <div className={styles.signupContainer}>
             <div className={styles.imageSection}>
@@ -50,7 +68,7 @@ const Signup = () => {
             </div>
 
 
-            <div className={styles.formSection}>
+            <div className={styles.formSection} onSubmit={submitHandler}>
                 <form>
                     <div className={styles.header}>
                         <p>Already have an account?</p>
@@ -83,7 +101,7 @@ const Signup = () => {
                     <button>Sign up</button>
                 </form>
             </div>
-
+            <ToastContainer />
         </div>
     );
 };
