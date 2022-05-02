@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Signup.module.css';
 import { Link } from 'react-router-dom';
+
+//functions
+import { validation } from '../../functions/validation';
 
 //tools
 import image from '../../tools/images/Signup.png'
@@ -14,12 +17,19 @@ const Signup = () => {
         confirmPassword: ""
     })
 
+    const [errors , setErrors] = useState({})
+
     const changeHandler = (e) => {
         setData({
             ...data,
             [e.target.name]: e.target.value
         })
     }
+
+    useEffect(() => {
+        setErrors(validation(data))
+        console.log(errors)
+    }, [data])
 
     return (
         <div className={styles.signupContainer}>
@@ -41,18 +51,22 @@ const Signup = () => {
                     <div className={styles.formField}>
                         <label>Name</label>
                         <input name='name' type='text' placeholder='enter ur username...' value={data.name} onChange={changeHandler} />
+                        <span>{errors.name}</span>
                     </div>
                     <div className={styles.formField}>
                         <label>Email</label>
                         <input name='email' type='email' placeholder='example@gmail.com' value={data.email} onChange={changeHandler} />
+                        <span>{errors.email}</span>
                     </div>
                     <div className={styles.formField}>
                         <label>Password</label>
                         <input name='password' type='password' placeholder='8+ characters' value={data.password} onChange={changeHandler} />
+                        <span>{errors.password}</span>
                     </div>
                     <div className={styles.formField}>
                         <label>Confirm password</label>
                         <input name='confirmPassword' type='password' placeholder='8+ characters' value={data.confirmPassword} onChange={changeHandler} />
+                        <span>{errors.confirmPassword}</span>
                     </div>
                     <button>Sign up</button>
                 </form>
