@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Signup.module.css';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,21 @@ import { Link } from 'react-router-dom';
 import image from '../../tools/images/Signup.png'
 
 const Signup = () => {
+
+    const [data , setData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    })
+
+    const changeHandler = (e) => {
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
+
     return (
         <div className={styles.signupContainer}>
             <div className={styles.imageSection}>
@@ -25,19 +40,19 @@ const Signup = () => {
                     </div>
                     <div className={styles.formField}>
                         <label>Name</label>
-                        <input name='name' type='text' placeholder='enter ur username...' />
+                        <input name='name' type='text' placeholder='enter ur username...' value={data.name} onChange={changeHandler} />
                     </div>
                     <div className={styles.formField}>
                         <label>Email</label>
-                        <input name='email' type='email' placeholder='example@gmail.com' />
+                        <input name='email' type='email' placeholder='example@gmail.com' value={data.email} onChange={changeHandler} />
                     </div>
                     <div className={styles.formField}>
                         <label>Password</label>
-                        <input name='password' type='password' placeholder='8+ characters' />
+                        <input name='password' type='password' placeholder='8+ characters' value={data.password} onChange={changeHandler} />
                     </div>
                     <div className={styles.formField}>
                         <label>Confirm password</label>
-                        <input name='confirmPassword' type='password' placeholder='8+ characters' />
+                        <input name='confirmPassword' type='password' placeholder='8+ characters' value={data.confirmPassword} onChange={changeHandler} />
                     </div>
                     <button>Sign up</button>
                 </form>

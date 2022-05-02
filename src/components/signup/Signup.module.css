@@ -93,7 +93,7 @@
     transition: all 0.2s ease;
 }
 
-.header button:hover {
+.header a:hover {
     background-color: var(--background-color);
     transition: all 0.2s ease;
 }
