@@ -32,4 +32,24 @@ const validation = (data) => {
     return errors;
 }
 
-export {validation};
+const signinValidation = (data) => {
+    const errors = {};
+
+    if(!data.name.trim()) {
+        errors.name = '*Enter ur username*'
+    }else {
+        delete errors.name
+    }
+
+    if(!data.password) {
+        errors.password = '*Please enter ur password*'
+    }else if(data.password.length <8) {
+        errors.password = '*Password must be 8 characters or more*'
+    }else {
+        delete errors.password
+    }
+
+    return errors;
+}
+
+export {validation , signinValidation};
